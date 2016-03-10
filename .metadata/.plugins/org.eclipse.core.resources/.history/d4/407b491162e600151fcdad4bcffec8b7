@@ -1,0 +1,16 @@
+package fun.test;
+
+public class Synchronized {
+
+	public static void main(String[] args) {
+		Ticket tick = new Ticket();
+		tick.TICKETS
+	}
+}
+class Ticket{
+	public int TICKETS = 400;
+}
+
+class Thr implements Runnable{
+	
+}

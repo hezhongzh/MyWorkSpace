@@ -1,0 +1,33 @@
+package fun.test;
+
+public class Synchronized {
+
+	public static void main(String[] args) {
+		Thr run = new Thr();
+		Thread t1 = new Thread(run,"进程一");
+		Thread t2 = new Thread(run,"进程二");
+		Thread t3 = new Thread(run,"进程三");
+		t1.start();
+		t2.start();
+		t3.start();
+		
+	}
+}
+class Ticket{
+	public int TICKETS = 400;
+}
+
+class Thr implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		Ticket tic = new Ticket();
+		int tickets = tic.TICKETS;
+		synchronized(new Object()){
+			System.out.println(Thread.currentThread().getName()+":"+"  获得参数："+tickets);
+			tickets = tickets--;
+		}
+	}
+	
+}

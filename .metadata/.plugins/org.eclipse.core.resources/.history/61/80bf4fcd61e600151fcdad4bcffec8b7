@@ -1,0 +1,15 @@
+package fun.test;
+
+public class Synchronized {
+
+
+	public static void main(String[] args) {
+		Ticket tick = new Ticket();
+		tick.putickets
+	}
+}
+class Ticket{
+	private int tickets = 400;
+	public int putickets = 400;
+	
+}

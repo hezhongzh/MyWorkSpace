@@ -42,6 +42,8 @@ public class Dao implements Runnable {
 					} else {
 						INIT_ID++;
 					}
+					
+					
 					String test_id = "STATUS";
 					List query_params = new ArrayList();
 					query_params.add(INIT_ID);
