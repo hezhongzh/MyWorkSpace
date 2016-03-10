@@ -4,9 +4,9 @@ public class Synchronized {
 
 	public static void main(String[] args) {
 		Thr run = new Thr();
-		Thread t1 = new Thread(run,"½ø³ÌÒ»");
-		Thread t2 = new Thread(run,"½ø³Ì¶þ");
-		Thread t3 = new Thread(run,"½ø³ÌÈý");
+		Thread t1 = new Thread(run,"çº¿ç¨‹ä¸€");
+		Thread t2 = new Thread(run,"çº¿ç¨‹äºŒ");
+		Thread t3 = new Thread(run,"çº¿ç¨‹ä¸‰");
 		t1.start();
 		t2.start();
 		t3.start();
@@ -22,17 +22,17 @@ class Ticket{
 }
 
 class Thr implements Runnable{
-	private  int tickets = 400;
+	Ticket ti = new Ticket();
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
 		//Ticket tic = new Ticket();
 		do{
 		synchronized(this){
-			System.out.println(Thread.currentThread().getName()+":"+"  »ñµÃ²ÎÊý£º"+tickets);
-			tickets = tickets-1;
+			System.out.println(Thread.currentThread().getName()+":"+"  èŽ·å¾—å‚æ•°ï¼š"+ti.TICKETS);
+			ti.TICKETS = ti.TICKETS-1;
 		}
-		}while(tickets>1);
+		}while(ti.TICKETS>1);
 	}
 	
 }
